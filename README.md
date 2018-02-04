@@ -12,7 +12,6 @@ On Linux [Ncurses](https://en.wikipedia.org/wiki/Ncurses) is used.
 
 ## Instructions
 * On Linux you will need to install 'ncurses-dev' (sudo apt install ncurses-dev)
-
 * Download or Git Clone to your Monkey2 ‘Modules’ folder
 * Recompile module
 * Compile tests inside the ‘tests’ folder

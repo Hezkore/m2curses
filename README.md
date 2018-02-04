@@ -11,8 +11,9 @@ On Linux [Ncurses](https://en.wikipedia.org/wiki/Ncurses) is used.
 
 
 ## Instructions
-* Download or Git Clone to your Monkey2 ‘Modules’ folder
 * On Linux you will need to install 'ncurses-dev' (sudo apt install ncurses-dev)
+
+* Download or Git Clone to your Monkey2 ‘Modules’ folder
 * Recompile module
 * Compile tests inside the ‘tests’ folder
 * Run tests via your ‘products’ folder and not via Ted2Go

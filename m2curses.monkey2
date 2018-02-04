@@ -1,7 +1,6 @@
 Namespace m2curses
 
 #Import "<std>"
-'#Import "<libc>"
 
 #If __TARGET__="windows"
 	

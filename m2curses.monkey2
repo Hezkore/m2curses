@@ -1,8 +1,22 @@
 Namespace m2curses
 
-#Import "makefile"
+#Import "<std>"
+'#Import "<libc>"
 
-#Import "<curses.h>"
+#If __TARGET__="windows"
+	
+	#Import "makefile_windows"
+	#Import "<curses.h>"
+	
+#ElseIf __TARGET__="macos"
+	
+	'#Import "makefile_macos"
+	
+#ElseIf __TARGET__="linux"
+	
+	#Import "<libncurses.a>"
+	#Import "<ncurses.h>"
+#Endif
 
 Extern
 	Struct mmask_t
@@ -99,7 +113,11 @@ Extern
 	
 	Function keypad(window:Window,enable:Bool)
 	
-	Function getmouse:Int(event:MoveEvent Ptr)="nc_getmouse"
+	#If __TARGET__="windows"
+		Function getmouse:Int(event:MoveEvent Ptr)="nc_getmouse"
+	#Else
+		Function getmouse:Int(event:MoveEvent Ptr)
+	#Endif
 	
 	Function mousemask:mmask_t(events:mmask_t, oldmask:mmask_t ptr)
 	
@@ -163,7 +181,7 @@ Function Main()
 				wattroff(w, COLOR_PAIR(3) )
 			Endif
 		Endif
-	wEnd
-	endwin()
+	Wend
 	
+	endwin()
 End

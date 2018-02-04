@@ -1,0 +1,4 @@
+# Version number macros for inclusion from makefiles
+
+VER = 35
+VERDOT = 3.5

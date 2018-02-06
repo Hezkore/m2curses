@@ -43,6 +43,94 @@ Extern
 	
 	Const OK:Int
 	
+	Const KEY_CODE_YES:Int
+	Const KEY_BREAK:Int 
+	Const KEY_DOWN:Int
+	Const KEY_UP:Int
+	Const KEY_LEFT:Int
+	Const KEY_RIGHT:Int
+	Const KEY_HOME:Int
+	Const KEY_BACKSPACE:Int
+	Const KEY_F0:Int
+	Const KEY_DL:Int
+	Const KEY_IL:Int
+	Const KEY_DC:Int
+	Const KEY_IC:Int
+	Const KEY_EIC:Int
+	Const KEY_CLEAR:Int
+	Const KEY_EOS:Int
+	Const KEY_EOL:Int
+	Const KEY_SF:Int
+	Const KEY_SR:Int
+	Const KEY_NPAGE:Int
+	Const KEY_PPAGE:Int
+	Const KEY_STAB:Int
+	Const KEY_CTAB:Int
+	Const KEY_CATAB:Int
+	Const KEY_ENTER:Int
+	Const KEY_SRESET:Int
+	Const KEY_RESET:Int
+	Const KEY_PRINT:Int
+	Const KEY_LL:Int
+	Const KEY_ABORT:Int
+	Const KEY_SHELP:Int
+	Const KEY_LHELP:Int
+	Const KEY_BTAB:Int
+	Const KEY_BEG:Int
+	Const KEY_CANCEL:Int
+	Const KEY_CLOSE:Int
+	Const KEY_COMMAND:Int
+	Const KEY_COPY:Int
+	Const KEY_CREATE:Int
+	Const KEY_END:Int
+	Const KEY_EXIT:Int
+	Const KEY_FIND:Int
+	Const KEY_HELP:Int
+	Const KEY_MARK:Int
+	Const KEY_MESSAGE:Int
+	Const KEY_MOVE:Int
+	Const KEY_NEXT:Int
+	Const KEY_OPEN:Int
+	Const KEY_OPTIONS:Int
+	Const KEY_PREVIOUS:Int
+	Const KEY_REDO:Int
+	Const KEY_REFERENCE:Int
+	Const KEY_REFRESH:Int
+	Const KEY_REPLACE:Int
+	Const KEY_RESTART:Int
+	Const KEY_RESUME:Int
+	Const KEY_SAVE:Int
+	Const KEY_SBEG:Int
+	Const KEY_SCANCEL:Int
+	Const KEY_SCOMMAND:Int
+	Const KEY_SCOPY:Int
+	Const KEY_SCREATE:Int
+	Const KEY_SDC:Int
+	Const KEY_SDL:Int
+	Const KEY_SELECT:Int
+	Const KEY_SEND:Int
+	Const KEY_SEOL:Int
+	Const KEY_SEXIT:Int
+	Const KEY_SFIND:Int
+	Const KEY_SHOME:Int
+	Const KEY_SIC:Int
+	Const KEY_SLEFT:Int
+	Const KEY_SMESSAGE:Int
+	Const KEY_SMOVE:Int
+	Const KEY_SNEXT:Int
+	Const KEY_SOPTIONS:Int
+	Const KEY_SPREVIOUS:Int
+	Const KEY_SPRINT:Int
+	Const KEY_SREDO:Int
+	Const KEY_SREPLACE:Int
+	Const KEY_SRIGHT:Int
+	Const KEY_SRSUME:Int
+	Const KEY_SSAVE:Int
+	Const KEY_SSUSPEND:Int
+	Const KEY_SUNDO:Int
+	Const KEY_SUSPEND:Int
+	Const KEY_UNDO:Int
+	
 	Const stdscr:Window
 	Const A_STANDOUT:Int
 	Const A_UNDERLINE:Int
@@ -60,20 +148,6 @@ Extern
 	
 	Global COLS:Int
 	Global LINES:Int
-	
-	Const KEY_MOUSE:Int
-	Const KEY_DOWN:Int
-	Const KEY_UP:Int
-	Const KEY_LEFT:Int
-	Const KEY_RIGHT:Int
-	Const KEY_HOME:Int
-	Const KEY_BACKSPACE:Int
-	Const KEY_DC:Int
-	Const KEY_IC:Int
-	Const KEY_ENTER:Int
-	Const KEY_F1:Int
-	Const KEY_F2:Int
-	Const KEY_F3:Int
 	
 	Const COLOR_BLACK:Int
 	Const COLOR_BLUE:Int
@@ -109,17 +183,17 @@ Extern
 	Function bkgd:Int( Int )
 	Function bkgdset:Void( Int )
 	Function border:Int( Int, Int, Int, Int, Int, Int, Int, Int )
-	Function box:Int( Window, Int, Int )
+	Function box:Int( window:Window, Int, Int )
 	Function can_change_color:Bool()
 	Function cbreak:Int()
 	Function chgat:Int( Int, attribute:Int, Short )
-	Function clearok:Int( Window, Bool )
+	Function clearok:Int( window:Window, Bool )
 	Function clear:Int()
 	Function clrtobot:Int()
 	Function clrtoeol:Int()
 	Function color_content:Int( Short, Short, Short, Short )
 	Function color_set:Int( Short )
-	Function copywin:Int( Window, Window, Int, Int, Int, Int, Int, Int, Int )
+	Function copywin:Int( window:Window, Window, Int, Int, Int, Int, Int, Int, Int )
 	Function curs_set:Int( Int )
 	Function def_prog_mode:Int()
 	Function def_shell_mode:Int()
@@ -127,10 +201,10 @@ Extern
 	Function delch:Int()
 	Function deleteln:Int()
 	Function delscreen:Void( Screen )
-	Function delwin:Int( Window )
-	Function derwin:Window( Window, Int, Int, Int, Int )
+	Function delwin:Int( window:Window )
+	Function derwin:Window( window:Window, Int, Int, Int, Int )
 	Function doupdate:Int()
-	Function dupwin:Window( Window )
+	Function dupwin:Window( window:Window )
 	Function echochar:Int( Int )
 	Function echo:Int()
 	Function endwin:Int()
@@ -139,7 +213,7 @@ Extern
 	Function filter:Void()
 	Function flash:Int()
 	Function flushinp:Int()
-	Function getbkgd:Int( Window )
+	Function getbkgd:Int( window:Window )
 	Function getnstr:Int( CString, Int )
 	Function getstr:Int( CString )
 	Function getwin:Window( FILE )
@@ -148,14 +222,14 @@ Extern
 	Function has_ic:Bool()
 	Function has_il:Bool()
 	Function hline:Int( Int, Int )
-	Function idcok:Void( Window, Bool )
-	Function idlok:Int( Window, Bool )
-	Function immedok:Void( Window, Bool )
+	Function idcok:Void( window:Window, Bool )
+	Function idlok:Int( window:Window, Bool )
+	Function immedok:Void( window:Window, Bool )
 	Function inchnstr:Int( Int, Int )
 	Function inchstr:Int( Int )
 	Function inch:Int()
-	Function init_color:Int( Short, Short, Short, Short )
-	Function init_pair:Int( Short, Short, Short )
+	Function init_color:Int( color:Short, r:Short, g:Short, b:Short )
+	Function init_pair:Int( pair:Short, fg:Short, bg:Short )
 	Function initscr:Window()
 	Function innstr:Int( CString, Int )
 	Function insch:Int( Int )
@@ -164,16 +238,16 @@ Extern
 	Function insnstr:Int( CString, Int )
 	Function insstr:Int( CString )
 	Function instr:Int( CString )
-	Function intrflush:Int( Window, Bool )
+	Function intrflush:Int( window:Window, Bool )
 	Function isendwin:Bool()
-	Function is_linetouched:Bool( Window, Int )
-	Function is_wintouched:Bool( Window )
+	Function is_linetouched:Bool( window:Window, Int )
+	Function is_wintouched:Bool( window:Window )
 	Function keyname:CString( Int )
-	Function keypad:Int( Window, Bool )
+	Function keypad:Int( window:Window, Bool )
 	Function killchar:CString()
-	Function leaveok:Int( Window, Bool )
+	Function leaveok:Int( window:Window, Bool )
 	Function longname:CString()
-	Function meta:Int( Window, Bool )
+	Function meta:Int( window:Window, Bool )
 	Function move:Int( Int, Int )
 	Function mvaddch:Int( Int, Int, Int )
 	Function mvaddchnstr:Int( Int, Int, Int, Int )
@@ -183,7 +257,7 @@ Extern
 	Function mvchgat:Int( Int, Int, Int, attribute:Int, Short )
 	Function mvcur:Int( Int, Int, Int, Int )
 	Function mvdelch:Int( Int, Int )
-	Function mvderwin:Int( Window, Int, Int )
+	Function mvderwin:Int( window:Window, Int, Int )
 	Function mvgetch:Int( Int, Int )
 	Function mvgetnstr:Int( Int, Int, CString, Int )
 	Function mvgetstr:Int( Int, Int, CString )
@@ -199,52 +273,52 @@ Extern
 	Function mvprintw:Int( Int, Int, CString )
 	Function mvscanw:Int( Int, Int, CString )
 	Function mvvline:Int( Int, Int, Int, Int )
-	Function mvwaddchnstr:Int( Window, Int, Int, Int, Int )
-	Function mvwaddchstr:Int( Window, Int, Int, Int )
-	Function mvwaddch:Int( Window, Int, Int, Int )
-	Function mvwaddnstr:Int( Window, Int, Int, CString, Int )
-	Function mvwaddstr:Int( Window, Int, Int, CString )
-	Function mvwchgat:Int( Window, Int, Int, Int, attribute:Int, Short )
-	Function mvwdelch:Int( Window, Int, Int )
-	Function mvwgetch:Int( Window, Int, Int )
-	Function mvwgetnstr:Int( Window, Int, Int, CString, Int )
-	Function mvwgetstr:Int( Window, Int, Int, CString )
-	Function mvwhline:Int( Window, Int, Int, Int, Int )
-	Function mvwinchnstr:Int( Window, Int, Int, Int, Int )
-	Function mvwinchstr:Int( Window, Int, Int, Int )
-	Function mvwinch:Int( Window, Int, Int )
-	Function mvwinnstr:Int( Window, Int, Int, CString, Int )
-	Function mvwinsch:Int( Window, Int, Int, Int )
-	Function mvwinsnstr:Int( Window, Int, Int, CString, Int )
-	Function mvwinsstr:Int( Window, Int, Int, CString )
-	Function mvwinstr:Int( Window, Int, Int, CString )
-	Function mvwin:Int( Window, Int, Int )
-	Function mvwprintw:Int( Window, Int, Int, CString )
-	Function mvwscanw:Int( Window, Int, Int, CString )
-	Function mvwvline:Int( Window, Int, Int, Int, Int )
+	Function mvwaddchnstr:Int( window:Window, Int, Int, Int, Int )
+	Function mvwaddchstr:Int( window:Window, Int, Int, Int )
+	Function mvwaddch:Int( window:Window, Int, Int, Int )
+	Function mvwaddnstr:Int( window:Window, Int, Int, CString, Int )
+	Function mvwaddstr:Int( window:Window, Int, Int, CString )
+	Function mvwchgat:Int( window:Window, Int, Int, Int, attribute:Int, Short )
+	Function mvwdelch:Int( window:Window, Int, Int )
+	Function mvwgetch:Int( window:Window, Int, Int )
+	Function mvwgetnstr:Int( window:Window, Int, Int, CString, Int )
+	Function mvwgetstr:Int( window:Window, Int, Int, CString )
+	Function mvwhline:Int( window:Window, Int, Int, Int, Int )
+	Function mvwinchnstr:Int( window:Window, Int, Int, Int, Int )
+	Function mvwinchstr:Int( window:Window, Int, Int, Int )
+	Function mvwinch:Int( window:Window, Int, Int )
+	Function mvwinnstr:Int( window:Window, Int, Int, CString, Int )
+	Function mvwinsch:Int( window:Window, Int, Int, Int )
+	Function mvwinsnstr:Int( window:Window, Int, Int, CString, Int )
+	Function mvwinsstr:Int( window:Window, Int, Int, CString )
+	Function mvwinstr:Int( window:Window, Int, Int, CString )
+	Function mvwin:Int( window:Window, y:Int, x:Int )
+	Function mvwprintw:Int( window:Window, Int, Int, CString )
+	Function mvwscanw:Int( window:Window, Int, Int, CString )
+	Function mvwvline:Int( window:Window, Int, Int, Int, Int )
 	Function napms:Int( Int )
 	Function newpad:Window( Int, Int )
 	Function newterm:Screen( CString, FILE, FILE )
-	Function newwin:Window( Int, Int, Int, Int )
+	Function newwin:Window( w:Int, h:Int, x:Int, y:Int )
 	Function nl:Int()
 	Function nocbreak:Int()
-	Function nodelay:Int( Window, Bool )
+	Function nodelay:Int( window:Window, Bool )
 	Function noecho:Int()
 	Function nonl:Int()
 	Function noqiflush:Void()
 	Function noraw:Int()
-	Function notimeout:Int( Window, Bool )
-	Function overlay:Int( Window, Window )
-	Function overwrite:Int( Window, Window )
+	Function notimeout:Int( window:Window, Bool )
+	Function overlay:Int( window:Window, Window )
+	Function overwrite:Int( window:Window, Window )
 	Function pair_content:Int( Short, Short, Short )
-	Function pechochar:Int( Window, Int )
-	Function pnoutrefresh:Int( Window, Int, Int, Int, Int, Int, Int )
-	Function prefresh:Int( Window, Int, Int, Int, Int, Int, Int )
+	Function pechochar:Int( window:Window, Int )
+	Function pnoutrefresh:Int( window:Window, Int, Int, Int, Int, Int, Int )
+	Function prefresh:Int( window:Window, Int, Int, Int, Int, Int, Int )
 	Function printw:Int( CString )
-	Function putwin:Int( Window, FILE )
+	Function putwin:Int( window:Window, FILE )
 	Function qiflush:Void()
 	Function raw:Int()
-	Function redrawwin:Int( Window )
+	Function redrawwin:Int( window:Window )
 	Function refresh:Int()
 	Function reset_prog_mode:Int()
 	Function reset_shell_mode:Int()
@@ -257,8 +331,8 @@ Extern
 	Function scr_restore:Int( CString )
 	Function scr_set:Int( CString )
 	Function scrl:Int( Int )
-	Function scroll:Int( Window )
-	Function scrollok:Int( Window, Bool )
+	Function scroll:Int( window:Window )
+	Function scrollok:Int( window:Window, Bool )
 	Function set_term:Screen( Screen )
 	Function setscrreg:Int( Int, Int )
 	Function slk_attroff:Int( Int )
@@ -279,81 +353,81 @@ Extern
 	Function standend:Int()
 	Function standout:Int()
 	Function start_color:Int()
-	Function subpad:Window( Window, Int, Int, Int, Int )
-	Function subwin:Window( Window, Int, Int, Int, Int )
-	Function syncok:Int( Window, Bool )
+	Function subpad:Window( window:Window, Int, Int, Int, Int )
+	Function subwin:Window( window:Window, Int, Int, Int, Int )
+	Function syncok:Int( window:Window, Bool )
 	Function termattrs:Int()
 	Function term_attrs:Int()
 	Function termname:CString()
 	Function timeout:Void( Int )
-	Function touchline:Int( Window, Int, Int )
-	Function touchwin:Int( Window )
+	Function touchline:Int( window:Window, Int, Int )
+	Function touchwin:Int( window:Window )
 	Function typeahead:Int( Int )
-	Function untouchwin:Int( Window )
+	Function untouchwin:Int( window:Window )
 	Function use_env:Void( Bool )
 	Function vidattr:Int( Int )
 	Function vid_attr:Int( attribute:Int, Short )
 	Function vidputs:Int( Int, func:Int( Int ) )
 	Function vid_puts:Int( attribute:Int, Short, void, func:Int( Int ) )
 	Function vline:Int( Int, Int )
-'	Function vw_printw:Int( Window, CString, va_list )
-'	Function vwprintw:Int( Window, CString, va_list )
-'	Function vw_scanw:Int( Window, CString, va_list )
-'	Function vwscanw:Int( Window, CString, va_list )
-	Function waddchnstr:Int( Window, Int, Int )
-	Function waddchstr:Int( Window, Int )
-	Function waddch:Int( Window, Int )
-	Function waddnstr:Int( Window, CString, Int )
-	Function waddstr:Int( Window, CString )
-	Function wattroff:Int( Window, Int )
-	Function wattron:Int( Window, Int )
-	Function wattrset:Int( Window, Int )
-	Function wattr_get:Int( Window, attribute:Int, Short )
-	Function wattr_off:Int( Window, attribute:Int )
-	Function wattr_on:Int( Window, attribute:Int )
-	Function wattr_set:Int( Window, attribute:Int, Short )
-	Function wbkgdset:Void( Window, Int )
-	Function wbkgd:Int( Window, Int )
-	Function wborder:Int( Window, Int, Int, Int, Int, Int, Int, Int, Int )
-	Function wchgat:Int( Window, Int, attribute:Int, Short )
-	Function wclear:Int( Window )
-	Function wclrtobot:Int( Window )
-	Function wclrtoeol:Int( Window )
-	Function wcolor_set:Int( Window, Short )
-	Function wcursyncup:Void( Window )
-	Function wdelch:Int( Window )
-	Function wdeleteln:Int( Window )
-	Function wechochar:Int( Window, Int )
-	Function werase:Int( Window )
-	Function wgetch:Int( Window )
-	Function wgetnstr:Int( Window, CString, Int )
-	Function wgetstr:Int( Window, CString )
-	Function whline:Int( Window, Int, Int )
-	Function winchnstr:Int( Window, Int, Int )
-	Function winchstr:Int( Window, Int )
-	Function winch:Int( Window )
-	Function winnstr:Int( Window, CString, Int )
-	Function winsch:Int( Window, Int )
-	Function winsdelln:Int( Window, Int )
-	Function winsertln:Int( Window )
-	Function winsnstr:Int( Window, CString, Int )
-	Function winsstr:Int( Window, CString )
-	Function winstr:Int( Window, CString )
-	Function wmove:Int( Window, Int, Int )
-	Function wnoutrefresh:Int( Window )
-	Function wprintw:Int( Window, CString )
-	Function wredrawln:Int( Window, Int, Int )
-	Function wrefresh:Int( Window )
-	Function wscanw:Int( Window, CString )
-	Function wscrl:Int( Window, Int )
-	Function wsetscrreg:Int( Window, Int, Int )
-	Function wstandend:Int( Window )
-	Function wstandout:Int( Window )
-	Function wsyncdown:Void( Window )
-	Function wsyncup:Void( Window )
-	Function wtimeout:Void( Window, Int )
-	Function wtouchln:Int( Window, Int, Int, Int )
-	Function wvline:Int( Window, Int, Int )
+'	Function vw_printw:Int( window:Window, CString, va_list )
+'	Function vwprintw:Int( window:Window, CString, va_list )
+'	Function vw_scanw:Int( window:Window, CString, va_list )
+'	Function vwscanw:Int( window:Window, CString, va_list )
+	Function waddchnstr:Int( window:Window, Int, Int )
+	Function waddchstr:Int( window:Window, Int )
+	Function waddch:Int( window:Window, Int )
+	Function waddnstr:Int( window:Window, CString, Int )
+	Function waddstr:Int( window:Window, CString )
+	Function wattroff:Int( window:Window, Int )
+	Function wattron:Int( window:Window, Int )
+	Function wattrset:Int( window:Window, Int )
+	Function wattr_get:Int( window:Window, attribute:Int, Short )
+	Function wattr_off:Int( window:Window, attribute:Int )
+	Function wattr_on:Int( window:Window, attribute:Int )
+	Function wattr_set:Int( window:Window, attribute:Int, Short )
+	Function wbkgdset:Void( window:Window, Int )
+	Function wbkgd:Int( window:Window, Int )
+	Function wborder:Int( window:Window, Int, Int, Int, Int, Int, Int, Int, Int )
+	Function wchgat:Int( window:Window, Int, attribute:Int, Short )
+	Function wclear:Int( window:Window )
+	Function wclrtobot:Int( window:Window )
+	Function wclrtoeol:Int( window:Window )
+	Function wcolor_set:Int( window:Window, Short )
+	Function wcursyncup:Void( window:Window )
+	Function wdelch:Int( window:Window )
+	Function wdeleteln:Int( window:Window )
+	Function wechochar:Int( window:Window, Int )
+	Function werase:Int( window:Window )
+	Function wgetch:Int( window:Window )
+	Function wgetnstr:Int( window:Window, CString, Int )
+	Function wgetstr:Int( window:Window, CString )
+	Function whline:Int( window:Window, Int, Int )
+	Function winchnstr:Int( window:Window, Int, Int )
+	Function winchstr:Int( window:Window, Int )
+	Function winch:Int( window:Window )
+	Function winnstr:Int( window:Window, CString, Int )
+	Function winsch:Int( window:Window, Int )
+	Function winsdelln:Int( window:Window, Int )
+	Function winsertln:Int( window:Window )
+	Function winsnstr:Int( window:Window, CString, Int )
+	Function winsstr:Int( window:Window, CString )
+	Function winstr:Int( window:Window, CString )
+	Function wmove:Int( window:Window, Int, Int )
+	Function wnoutrefresh:Int( window:Window )
+	Function wprintw:Int( window:Window, CString )
+	Function wredrawln:Int( window:Window, Int, Int )
+	Function wrefresh:Int( window:Window )
+	Function wscanw:Int( window:Window, CString )
+	Function wscrl:Int( window:Window, Int )
+	Function wsetscrreg:Int( window:Window, Int, Int )
+	Function wstandend:Int( window:Window )
+	Function wstandout:Int( window:Window )
+	Function wsyncdown:Void( window:Window )
+	Function wsyncup:Void( window:Window )
+	Function wtimeout:Void( window:Window, Int )
+	Function wtouchln:Int( window:Window, Int, Int, Int )
+	Function wvline:Int( window:Window, Int, Int )
 	
 	'/Wide-character functions /
 	
@@ -459,15 +533,15 @@ Extern
 	
 	'/Quasi-standard /
 	
-	Function getattrs:Int( Window )
-	Function getbegx:Int( Window )
-	Function getbegy:Int( Window )
-	Function getmaxx:Int( Window )
-	Function getmaxy:Int( Window )
-	Function getparx:Int( Window )
-	Function getpary:Int( Window )
-	Function getcurx:Int( Window )
-	Function getcury:Int( Window )
+	Function getattrs:Int( window:Window )
+	Function getbegx:Int( window:Window )
+	Function getbegy:Int( window:Window )
+	Function getmaxx:Int( window:Window )
+	Function getmaxy:Int( window:Window )
+	Function getparx:Int( window:Window )
+	Function getpary:Int( window:Window )
+	Function getcurx:Int( window:Window )
+	Function getcury:Int( window:Window )
 	Function traceoff:Void()
 	Function traceon:Void()
 	Function unctrl:CString( Int )
@@ -483,37 +557,42 @@ Extern
 	Function mouse_off:Int( ULong )
 	Function request_mouse_pos:Int()
 	Function map_button:Int( ULong )
-	Function wmouse_position:Void( Window, Int, Int )
+	Function wmouse_position:Void( window:Window, Int, Int )
 '	Function getmouse:ULong()
 	Function getbmap:ULong()
 	
 	'/ncurses /
 	
-	Function assume_default_colors:Int( Int, Int )
+	Function assume_default_colors:Int( fg:Int, bg:Int )
 	Function curses_version:CString()
 	Function has_key:Bool( Int )
 	Function use_default_colors:Int()
-	Function wresize:Int( Window, Int, Int )
+	Function wresize:Int( window:Window, Int, Int )
 	Function mouseinterval:Int( Int )
 	Function mousemask:mmask_t( mmask_t, mmask_t Ptr )
 	Function mouse_trafo:Bool( Int, Int, Bool )
-'	Function nc_getmouse:Int(MouseEvent )
-	Function ungetmouse:Int(MouseEvent )
-	Function wenclose:Bool( Window, Int, Int )
-	Function wmouse_trafo:Bool( Window, Int, Int, Bool )
+'	Function nc_getmouse:Int( MouseEvent )
+	Function ungetmouse:Int( MouseEvent )
+	Function wenclose:Bool( window:Window, Int, Int )
+	Function wmouse_trafo:Bool( window:Window, Int, Int, Bool )
 	
-	'/*** Functions defined as macros ***/
+	'/*** Functions defined as macros **
 	
-	'/* getch() and ungetch() conflict with some DOS libraries */
-	
-	'#define getch()            wgetch(stdscr)
-	'#define ungetch(ch)        PDC_ungetch(ch)
+	Function getch:Int()
 	
 	Function COLOR_PAIR:Int( pair:Int )
 	Function PAIR_NUMBER:Int( number:Int )
-
+	
+	Function getbegyx( w:Window, y:Int Ptr, x:Int Ptr )
+	Function getmaxyx( w:Window, y:Int, x:Int )
+	Function getparyx( w:Window, y:Int Ptr, x:Int Ptr )
+	Function getyx( w:Window, y:Int Ptr, x:Int Ptr )
+	
+	Function getsyx( y:Int Ptr, x:Int Ptr )
+	
 Public
 
+#rem
 Function Main()
 	
 	initscr()
@@ -549,6 +628,9 @@ Function Main()
 	wattroff(w,A_BOLD)
 	mvwprintw(w,8,2,"Escape/Q To Quit")
 	
+	mvwprintw(w,6,2,"press a key")
+	mvwprintw(w,5,2,"click the mouse")
+	
 	wrefresh(w)
 	
 	keypad(w,True)
@@ -558,7 +640,7 @@ Function Main()
 	While True
 		Local key:=wgetch(w)
 		wattron(w, COLOR_PAIR(2) )
-		mvwprintw(w,6,2,"key="+key+" ")
+		mvwprintw(w,6,2,"key="+key+"      ")
 		wattroff(w, COLOR_PAIR(2) )
 		If key=27 exit
 		If key=113 exit
@@ -575,3 +657,4 @@ Function Main()
 	
 	endwin()
 End
+#end
